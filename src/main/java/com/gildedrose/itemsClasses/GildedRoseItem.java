@@ -1,27 +1,27 @@
 package main.java.com.gildedrose.itemsClasses;
 
 public abstract class GildedRoseItem extends Item{
-    protected static int maxQuality = 50;
+    protected int maxQuality;
 
     protected GildedRoseItem(String name, int sellIn, int quality) {
-        super(name, sellIn, Math.min(quality, maxQuality));
+        super(name, sellIn, Math.min(quality, 50));
     }
 
     protected GildedRoseItem(String name, int sellIn, int quality, int maxQuality) {
         super(name, sellIn, Math.min(quality, maxQuality));
-        GildedRoseItem.maxQuality = maxQuality;
+        this.maxQuality = maxQuality;
     }
 
     public void updateItem() {
         this.updateQuality();
         this.updateSellIn();
-        System.out.println("Item: " + this.getName() + " updated quality: " + this.quality + ", updated sell in: " + this.sellIn);
     }
 
     protected void updateSellIn(){this.sellIn--;}
     protected void updateQuality(){
         this.quality--;
         if (this.sellIn < 0) this.quality--;
+        this.quality = Math.max(this.quality, 0);
     }
 
     public String getName() {

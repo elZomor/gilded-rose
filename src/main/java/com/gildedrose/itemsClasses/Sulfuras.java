@@ -2,14 +2,13 @@ package main.java.com.gildedrose.itemsClasses;
 
 public class Sulfuras extends GildedRoseItem{
     private static final String name = "Sulfuras, Hand of Ragnaros";
+    private static final int maxQuality = 80;
+
     public Sulfuras(int sellIn, int quality) {
-        super(name, sellIn, quality, 80);
+        super(name, sellIn, quality, maxQuality);
     }
 
     @Override
-    public void updateItem(){
-        System.out.println("Item: " + this.getName() + " updated quality: " +
-                this.quality + ", updated sell in: " + this.sellIn);
-    }
+    public void updateItem(){}
 
 }

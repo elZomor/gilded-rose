@@ -1,8 +1,9 @@
 package main.java.com.gildedrose.itemsClasses;
 
-public class Sulfuras extends Item{
+public class Sulfuras extends GildedRoseItem{
+    private static final String name = "Sulfuras, Hand of Ragnaros";
     public Sulfuras(int sellIn, int quality) {
-        super("Sulfuras, Hand of Ragnaros", sellIn, quality, 80);
+        super(name, sellIn, quality, 80);
     }
 
     @Override

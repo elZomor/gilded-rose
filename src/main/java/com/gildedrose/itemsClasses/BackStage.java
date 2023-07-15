@@ -1,13 +1,14 @@
 package main.java.com.gildedrose.itemsClasses;
 
-public class BackStage extends Item{
+public class BackStage extends GildedRoseItem{
+    private static final String name = "Backstage passes to a TAFKAL80ETC concert";
     public BackStage(int sellIn, int quality) {
-        super("Backstage passes to a TAFKAL80ETC concert", sellIn, quality, 50);
+        super(name, sellIn, quality);
     }
 
     @Override
     protected void updateQuality() {
-        if (this.quality >= this.maxQuality) return;
+        if (this.quality >= maxQuality && this.sellIn > 0) return;
 
         if (this.sellIn < 0) {
             this.quality = 0;

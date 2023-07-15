@@ -1,13 +1,9 @@
 package main.java.com.gildedrose.itemsClasses;
 
-public class Other extends Item{
+public class Other extends GildedRoseItem{
+    private static final String name = "Other";
     public Other(int sellIn, int quality) {
-        super("Other", sellIn, quality, 50);
+        super(name, sellIn, quality);
     }
 
-    @Override
-    protected void updateQuality() {
-        this.quality--;
-        if (this.sellIn < 0) this.quality--;
-    }
 }

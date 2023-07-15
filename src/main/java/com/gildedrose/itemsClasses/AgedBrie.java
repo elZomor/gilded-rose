@@ -1,8 +1,9 @@
 package main.java.com.gildedrose.itemsClasses;
 
-public class AgedBrie extends Item{
+public class AgedBrie extends GildedRoseItem{
+    private static final String name = "Aged Brie";
     public AgedBrie(int sellIn, int quality) {
-        super("Aged Brie", sellIn, quality, 50);
+        super(name, sellIn, quality);
     }
 
     @Override
